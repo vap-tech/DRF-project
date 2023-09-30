@@ -12,6 +12,7 @@ class User(AbstractUser):
 
     patronymic = models.CharField(max_length=35, verbose_name='отчество', **NULLABLE)
     phone = models.CharField(max_length=35, verbose_name='телефон', **NULLABLE)
+    city = models.CharField(max_length=50, verbose_name='город', **NULLABLE)
     avatar = models.ImageField(upload_to='users/', verbose_name='аватар', **NULLABLE)
     verification_code = models.IntegerField(verbose_name='Код верификации', **NULLABLE)
 
