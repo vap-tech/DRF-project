@@ -18,4 +18,4 @@ class LessonAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ('user', 'pay_date', 'course', 'lesson', 'amount', 'pay_method',)
-    list_filter = ('user', 'pay_date', 'course', 'lesson', 'pay_method',)
+    list_filter = ('user', 'pay_date', 'pay_method',)
