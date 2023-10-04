@@ -1,0 +1,109 @@
+[
+  {
+    "model": "lms.course",
+    "pk": 1,
+    "fields": {
+      "name": "Информатика",
+      "preview": "",
+      "description": "Учимся программировать"
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 2,
+    "fields": {
+      "name": "Химия",
+      "preview": "",
+      "description": "Учимся химичить"
+    }
+  },
+  {
+    "model": "lms.course",
+    "pk": 3,
+    "fields": {
+      "name": "Математика",
+      "preview": "",
+      "description": "Учимся считать"
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 1,
+    "fields": {
+      "name": "Математика на пальцах",
+      "course": 3,
+      "preview": "",
+      "description": "Первый урок курса",
+      "video_url": null
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 2,
+    "fields": {
+      "name": "Информатика на пальцах",
+      "course": 1,
+      "preview": "",
+      "description": "Первый урок курса",
+      "video_url": null
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 3,
+    "fields": {
+      "name": "Химия на пальцах",
+      "course": 2,
+      "preview": "",
+      "description": "Вводный урок курса",
+      "video_url": null
+    }
+  },
+  {
+    "model": "lms.lesson",
+    "pk": 4,
+    "fields": {
+      "name": "Инфор на пальцах",
+      "course": 1,
+      "preview": "",
+      "description": "Тестовый второй урок",
+      "video_url": null
+    }
+  },
+  {
+    "model": "lms.payment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "pay_date": "2023-10-04T00:07:45Z",
+      "course": 1,
+      "lesson": null,
+      "amount": 1500,
+      "pay_method": "cash"
+    }
+  },
+  {
+    "model": "lms.payment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "pay_date": "2023-10-04T00:08:49Z",
+      "course": null,
+      "lesson": 2,
+      "amount": 199,
+      "pay_method": "card"
+    }
+  },
+  {
+    "model": "lms.payment",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "pay_date": "2023-10-04T01:14:25Z",
+      "course": 2,
+      "lesson": null,
+      "amount": 3000,
+      "pay_method": "card"
+    }
+  }
+]

@@ -18,3 +18,11 @@ class User(AbstractUser):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name} {self.patronymic} - {self.email} {"manager" * self.is_staff}'
+
+    class Meta:
+        verbose_name = 'пользователь'
+        verbose_name_plural = 'пользователи'
+        ordering = ('first_name', 'last_name', 'patronymic')
