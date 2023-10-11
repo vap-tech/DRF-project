@@ -4,3 +4,4 @@
 + CRUD Lesson added (GenericAPI)
 + LIST Payment added (filter and ordering)
 + Permission added (course and lesson)
++ Add validators video_url for YouTube only.
