@@ -16,6 +16,7 @@ class Course(models.Model):
     class Meta:
         verbose_name = 'курс'
         verbose_name_plural = 'курсы'
+        ordering = ('name', )
 
 
 class Lesson(models.Model):
@@ -33,6 +34,7 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = 'урок'
         verbose_name_plural = 'уроки'
+        ordering = ('name', )
 
 
 class Payment(models.Model):
