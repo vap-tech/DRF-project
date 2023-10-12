@@ -5,3 +5,6 @@
 + LIST Payment added (filter and ordering)
 + Permission added (course and lesson)
 + Add validators video_url for YouTube only.
++ Add pagination.
++ Add validators URL YouTube only
++ Add tests
