@@ -1,4 +1,5 @@
 .idea
 .env
+.coverage
 poetry.lock
 /users/management/commands/cu.py
