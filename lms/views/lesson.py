@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from lms.models import Lesson
 from lms.serializers.lesson import LessonSerializer
 from lms.permission import IsOwner, IsManager
+from lms.paginators import LmsPagination
 
 
 class LessonCreateView(CreateAPIView):
@@ -21,6 +22,7 @@ class LessonListView(ListAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsManager]
+    pagination_class = LmsPagination
 
 
 class LessonDetailView(RetrieveAPIView):

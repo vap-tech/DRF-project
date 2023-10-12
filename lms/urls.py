@@ -7,6 +7,7 @@ from lms.views.course import CourseViewSet
 from lms.views.jwt import MyTokenObtainPairView
 from lms.views.lesson import LessonCreateView, LessonListView, LessonDetailView, LessonUpdateView, LessonDeleteView
 from lms.views.payment import PaymentListView
+from lms.views.subscription import SubscriptionCreateView, SubscriptionDeleteView
 
 app_name = LmsConfig.name
 
@@ -21,6 +22,10 @@ urlpatterns = [
 
     path('token/', MyTokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
+
+    path('subscribe/', SubscriptionCreateView.as_view()),
+    path('unsubscribe/<int:pk>/', SubscriptionDeleteView.as_view()),
+
 ]
 
 course_router = routers.DefaultRouter()
