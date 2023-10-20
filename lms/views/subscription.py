@@ -6,6 +6,7 @@ from lms.serializers.subscription import SubscriptionSerializer
 
 
 class SubscriptionCreateView(CreateAPIView):
+    """ Subscription create endpoint """
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
     permission_classes = [IsAuthenticated, ]
@@ -17,6 +18,7 @@ class SubscriptionCreateView(CreateAPIView):
 
 
 class SubscriptionDeleteView(DestroyAPIView):
+    """ Subscription delete endpoint """
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
     permission_classes = [IsAuthenticated, ]
