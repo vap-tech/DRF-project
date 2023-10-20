@@ -8,3 +8,4 @@
 + Add pagination.
 + Add validators URL YouTube only
 + Add tests
++ Add pay integrations
