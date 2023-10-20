@@ -8,6 +8,7 @@ from lms.paginators import LmsPagination
 
 
 class LessonCreateView(CreateAPIView):
+    """ Lesson create endpoint """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, ]
@@ -19,6 +20,7 @@ class LessonCreateView(CreateAPIView):
 
 
 class LessonListView(ListAPIView):
+    """ Lesson list endpoint """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsManager]
@@ -26,18 +28,21 @@ class LessonListView(ListAPIView):
 
 
 class LessonDetailView(RetrieveAPIView):
+    """ Lesson detail endpoint """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsOwner]
 
 
 class LessonUpdateView(UpdateAPIView):
+    """ Lesson update endpoint """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsOwner]
 
 
 class LessonDeleteView(DestroyAPIView):
+    """ Lesson delete endpoint """
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsOwner]

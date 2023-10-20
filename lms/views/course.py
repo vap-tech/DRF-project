@@ -8,6 +8,7 @@ from lms.paginators import LmsPagination
 
 
 class CourseViewSet(ModelViewSet):
+    """ Course endpoint """
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [IsAuthenticated, IsOwner | IsManager]

@@ -7,6 +7,7 @@ from lms.serializers.payment import PaymentSerializer, PaymentCreateSerializer
 
 
 class PaymentListView(ListAPIView):
+    """ Payment list endpoint"""
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
     filter_backends = (DjangoFilterBackend, OrderingFilter)
@@ -15,5 +16,6 @@ class PaymentListView(ListAPIView):
 
 
 class PaymentCreateView(CreateAPIView):
+    """ Payment create endpoint """
     queryset = Payment.objects.all()
     serializer_class = PaymentCreateSerializer
