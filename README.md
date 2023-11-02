@@ -10,3 +10,4 @@
 + Add tests
 + Add pay integrations
 + Add documentations (swagger end redoc)
++ Add celery and periodic tascs to block inactive users
