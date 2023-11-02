@@ -5,6 +5,7 @@ from lms.models import Course
 from lms.serializers.course import CourseSerializer
 from lms.permission import IsOwner, IsManager
 from lms.paginators import LmsPagination
+from lms.tasks import send_info
 
 
 class CourseViewSet(ModelViewSet):
@@ -18,3 +19,8 @@ class CourseViewSet(ModelViewSet):
         new_course = serializer.save()
         new_course.owner = self.request.user
         new_course.save()
+
+    def perform_update(self, serializer):
+        update_course = serializer.save()
+        send_info.delay(update_course)
+        update_course.save()
