@@ -39,8 +39,9 @@ schedule, created = IntervalSchedule.objects.get_or_create(
  )
 
 # Создаем задачу для повторения
-PeriodicTask.objects.create(
-     interval=schedule,
-     name='Block inactive users',
-     task='lms.tasks.block_inactive_users',
- )
+if not PeriodicTask.objects.filter(name='Block inactive users'):
+    PeriodicTask.objects.create(
+         interval=schedule,
+         name='Block inactive users',
+         task='lms.tasks.block_inactive_users',
+     )
