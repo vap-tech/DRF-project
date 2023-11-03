@@ -2,7 +2,6 @@ import os
 from datetime import datetime, timedelta
 
 from celery import shared_task
-from django_celery_beat.models import PeriodicTask, IntervalSchedule
 
 from django.core.mail import send_mail
 
@@ -30,18 +29,3 @@ def block_inactive_users():
     for user in User.objects.all():
         if datetime.utcnow() - user.last_login > timedelta(days=92):
             user.is_active = False
-
-
-# Создаем интервал для повтора раз в день
-schedule, created = IntervalSchedule.objects.get_or_create(
-     every=1,
-     period=IntervalSchedule.DAYS,
- )
-
-# Создаем задачу для повторения
-if not PeriodicTask.objects.filter(name='Block inactive users'):
-    PeriodicTask.objects.create(
-         interval=schedule,
-         name='Block inactive users',
-         task='lms.tasks.block_inactive_users',
-     )

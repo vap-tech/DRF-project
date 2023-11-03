@@ -11,3 +11,6 @@
 + Add pay integrations
 + Add documentations (swagger end redoc)
 + Add celery and periodic tascs to block inactive users
+
+
+run './manage.py loaddata block_user_task.json' to create periodic block inactive user task 
