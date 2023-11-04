@@ -16,8 +16,8 @@ def send_info(course: 'Course'):
     for subscription in subscriptions:
 
         send_mail(
-            f'Курс {subscription.course} обновлён!',
-            f'Привет, {subscription.course} был обновлён, не забудь посмотреть что изменилось!',
+            'Курс обновлён!',
+            'Привет, был обновлён, не забудь посмотреть что изменилось!',
             os.getenv('EMAIL_HOST_USER'),
             [subscription.user.email],
             fail_silently=True,
